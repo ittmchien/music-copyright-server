@@ -12,7 +12,6 @@ const userController = {
     }
   },
 
-
   //Update User Profile
   updateUserProfile: async (req, res) => {
     try {
@@ -25,16 +24,16 @@ const userController = {
           password: hashed,
         };
 
-        const user=await User.findByIdAndUpdate(req.params.id, newUserData);
+        const user = await User.findByIdAndUpdate(req.params.id, newUserData);
         res.status(200).json(user);
-        // { message: "Update profile successfully" }
       } else {
         const newUserData = {
           name: req.body.name,
           email: req.body.email,
         };
 
-        const user=await User.findByIdAndUpdate(req.params.id, newUserData);
+        const user = await User.findByIdAndUpdate(req.params.id, newUserData);
+        
         res.status(200).json(user);
       }
     } catch (error) {

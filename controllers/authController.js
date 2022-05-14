@@ -69,7 +69,7 @@ const authController = {
       if (user.status === false) {
         return res
           .status(404)
-          .send({
+          .json({
             message:
               "Account was disable, please contact us to get more information",
           });
